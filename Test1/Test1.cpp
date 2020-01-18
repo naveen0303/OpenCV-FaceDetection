@@ -23,7 +23,7 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     Mat grayimg;
     cvtColor(img, grayimg, COLOR_BGR2GRAY);
     cascade.detectMultiScale(grayimg, faces, 1.1, 1, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
-    int n = faces.size();
+    size_t n = faces.size();
     for (size_t i = 0; i < n; i++)
     {
         Rect r = faces[i];
@@ -33,11 +33,11 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     //For many output images this is the naming seciton
     char name[100] = "tempimg";
     char index[100] = "0";  
-        
+    char name2[5] = ".jpg";
     _itoa_s(i, index, 100, 10);  //for every new image i increments by 1 and gets appended to the string
-    strcat_s(name,50,index);
-    strcat_s(name,50,".jpg");   //example: tempimg0.jpg   tempimg1.jpg etc..
-
+    strcat_s(name,100,index);
+    strcat_s(name,100,name2);   //example: tempimg0.jpg   tempimg1.jpg etc..
+    //puts(name);
     //write the output image
     imwrite(name, img);
     //namedWindow("display_image", WINDOW_AUTOSIZE);
@@ -69,7 +69,7 @@ int main(int argc, char** argv)
         cin >> c;
         
         //if option doesn't match the requirements go back
-        if (c != 'p' && c != 'q') {
+        if ((c != 'p') && (c != 'q')) {
             cout << "Error enter correct option!!!" << endl;
             goto label1;
         }
