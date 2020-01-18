@@ -69,7 +69,7 @@ int main(int argc, char** argv)
         cin >> c;
         
         //if option doesn't match the requirements go back
-        if (c != 'p' | c != 'q') {
+        if (c != 'p' || c != 'q') {
             cout << "Error enter correct option!!!" << endl;
             goto label1;
         }
