@@ -22,7 +22,7 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     vector<Rect> faces;
     Mat grayimg;
     cvtColor(img, grayimg, COLOR_BGR2GRAY);
-    cascade.detectMultiScale(grayimg, faces, 1.1, 1, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
+    cascade.detectMultiScale(grayimg, faces, 1.1, 3, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
     size_t n = faces.size();
     for (size_t i = 0; i < n; i++)
     {
