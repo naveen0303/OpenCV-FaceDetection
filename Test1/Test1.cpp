@@ -55,7 +55,7 @@ int main(int argc, char** argv)
     {
         Mat image;
         //used in-built function to detect faces in image
-        cascade.load("C:/opencv/build/etc/haarcascades/haarcascade_frontalface_alt.xml");
+        cascade.load("haarcascade_frontalface_alt.xml");
         //printf("%s", imgName);
         label2:image = imread(imgName, IMREAD_UNCHANGED);
         //image = imread(argv[1], IMREAD_UNCHANGED);
