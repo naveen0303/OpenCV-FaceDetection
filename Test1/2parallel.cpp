@@ -22,9 +22,9 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     size_t n = faces.size();
     
     #pragma omp parallel for
-    for (size_t i = 0; i < n; i++)
+    for (size_t j = 0; j < n; j++)
     {
-        Rect r = faces[i];
+        Rect r = faces[j];
         rectangle(img, cvPoint(cvRound(r.x * scale), cvRound(r.y * scale)), cvPoint(cvRound((r.x +r.width - 1) * scale), cvRound((r.y + r.height - 1) * scale)), Scalar(255, 0, 0), 3, 8, 0);
     }
 
