@@ -68,23 +68,16 @@ int main(int argc, char** argv)
         DetectAndDraw(image, cascade, scale,i);       
         
         //check for option after completion of 1 image
-        label1:cout << "Enter option:" << endl;
+        label1:
+        cout << "Enter option:" << endl;
         cout << "a) q: quit" << endl;
         cout << "b) p: path to file" << endl;
         cin >> c;
         
-        //if option doesn't match the requirements go back
-        if ((c != 'p') && (c != 'q')) {
-            cout << "Error enter correct option!!!" << endl;
-            goto label1;
-        }
-        
-        //for next image take the input image filename
-        if (c == 'p')
-        {
-            i++;
-            cin >> imgName;
-            goto label2;
+        switch (c) {
+        case 'q': break;
+        case 'p': i++; cin >> imgName; break;
+        default: cout << "Error!!! enter correct option" << endl; goto label1;
         }
     }
     return 0;
