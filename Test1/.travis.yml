@@ -1,4 +1,5 @@
 install:
+  - make get-deps
   - sudo apt-get install -qq g++-7
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 
@@ -32,8 +33,17 @@ install:
 language: cpp
 
 compiler:
+  - clang
   - gcc
-
+  
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake-data
+      - cmake
+      
 before_script:
   - mkdir build
   - cd build
