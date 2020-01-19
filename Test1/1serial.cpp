@@ -73,6 +73,7 @@ int main(int argc, char** argv)
         cout << "b) p: path to file" << endl;
         cin >> c;
         
+        //if option doesn't match the requirements go back
         switch (c) {
         case 'q': break;
         case 'p': i++; cin >> imgName; break;
