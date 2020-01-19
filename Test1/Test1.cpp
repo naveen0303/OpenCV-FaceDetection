@@ -21,9 +21,9 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     cvtColor(img, grayimg, COLOR_BGR2GRAY);
     cascade.detectMultiScale(grayimg, faces, 1.1, 3, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
     size_t n = faces.size();
-    for (size_t i = 0; i < n; i++)
+    for (size_t j = 0; j < n; j++)
     {
-        Rect r = faces[i];
+        Rect r = faces[j];
         rectangle(img, cvPoint(cvRound(r.x * scale), cvRound(r.y * scale)), cvPoint(cvRound((r.x +r.width - 1) * scale), cvRound((r.y + r.height - 1) * scale)), Scalar(255, 0, 0), 3, 8, 0);
     }
 
