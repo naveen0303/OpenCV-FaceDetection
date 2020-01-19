@@ -8,9 +8,6 @@
 using namespace std;
 using namespace cv;
 
-CascadeClassifier cascade;
-double scale = 1;
-
 //Function to Detect Face and Draw a Rectangle on it
 void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
 {
@@ -51,6 +48,9 @@ int main(int argc, char** argv)
 
     char *imgName = argv[1];
     
+   CascadeClassifier cascade;
+   double scale = 1;
+   
     int i = 0;
     char c = 'p';
 
