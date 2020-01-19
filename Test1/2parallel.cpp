@@ -20,7 +20,8 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
     cvtColor(img, grayimg, COLOR_BGR2GRAY);
     cascade.detectMultiScale(grayimg, faces, 1.1, 3, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
     size_t n = faces.size();
-#pragma omp parallel for
+    
+    #pragma omp parallel for
     for (size_t i = 0; i < n; i++)
     {
         Rect r = faces[i];
