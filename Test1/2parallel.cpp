@@ -72,18 +72,12 @@ int main(int argc, char** argv)
         cout << "a) q: quit" << endl;
         cout << "b) p: path to file" << endl;
         cin >> c;
-
+        
         //if option doesn't match the requirements go back
-        if ((c != 'p') && (c != 'q')) {
-            cout << "Error enter correct option!!!" << endl;
-            goto label1;
-        }
-        //if ( c == 'q')break;
-        //for next image take the input image filename
-        if (c == 'p')
-        {
-            i++;
-            cin >> imgName;
+        switch (c) {
+        case 'q': break;
+        case 'p': i++; cin >> imgName; break;
+        default: cout << "Error!!! enter correct option" << endl; goto label1;
         }
     }
     return 0;
