@@ -46,6 +46,11 @@ void DetectAndDraw(Mat& img, CascadeClassifier& cascade, double scale,int i)
 
 int main(int argc, char** argv)
 {
+    if(argc !=2)
+     {
+        cout << "Error!!! This program needs only 1 argument i.e, ImageName" << endl;
+        exit(1);
+     } 
     char *imgName = argv[1];
     
     int i = 0;
