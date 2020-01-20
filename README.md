@@ -6,7 +6,7 @@ Face Detection using C++ (OpenCV)
 
 Test1.cpp contains the code for executing all the programs that are mentioned below. uncomment the code that we want to use and leave the remaining two codes commented. 
 
-Compile and run Test1.cpp in Microsoft Visual Studio 2019.
+Compile and run Test1.cpp in Microsoft Visual Studio 2019. Set Initial input argument as testimg.jpg.
 
 Add External libraries - OpenCV and enable OpenMP support when compiling Q2 and Q3.
 
