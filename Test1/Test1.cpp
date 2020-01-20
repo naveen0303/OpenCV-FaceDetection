@@ -1,7 +1,7 @@
 //Author : Naveen Chalawadi
 //Assumption: Assumed that all the input image files are in the same directory
 
-/* Question 1 - Serial Implementation of Face Detection Algorithm using OpenCV
+/* Question 1 - Serial Implementation of Face Detection Algorithm using OpenCV */
 #include "opencv2/objdetect.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -87,7 +87,7 @@ int main(int argc, char** argv)
     }
     return 0;
 } 
-*/
+/**/
 
 /* Question 2 - Parallel Implementation of Face Detection Algorithm
 #include "opencv2/objdetect.hpp"
