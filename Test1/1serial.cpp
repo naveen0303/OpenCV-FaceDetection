@@ -5,6 +5,7 @@
 #include <imgproc/imgproc_c.h>
 #include <iostream>
 #include <cstring>
+#include <future>
 
 using namespace std;
 using namespace cv;
@@ -66,7 +67,8 @@ int main(int argc, char** argv)
         image = imread(imgName, IMREAD_UNCHANGED);
         //image = imread(argv[1], IMREAD_UNCHANGED);
         //image = imread("testimg.jpg", IMREAD_UNCHANGED);
-        DetectAndDraw(image, cascade, scale,i);       
+        //DetectAndDraw(image, cascade, scale,i);       
+        async(launch::async,DetectAndDraw, image, cascade, scale, i);
         
         //check for option after completion of 1 image
         label1:cout << "Enter option:" << endl;
